@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/*Foi definida uma class chamada "video-background" para definir os atributos do vídeo como plano de fundo.*/
+.video-background {
+  /*width é a propriedade que define a largura do elemento. No caso temos um video que será usado como plano de fundo. Logo, width com valor de 100% quer dizer que a class video-background deve ocupar 100% da largura do elemento pai (no caso "body").*/
+  width: 100%;
+  /*A propriedade height define a altura do elemento. No caso, 100vh quer dizer que a altura do elemento será de 100% da viewport ( área exibida na tela)*/
+  height: 100vh;
+  /*A propriedade overflow controla o que acontece com o conteúdo grande demais para caber em um área. Ela especifica se o conteúdo deve ser cortado ou adicionado barra de rolagem. O valor hidden corta o conteúdo, deixando a parte cortada oculta e sem barra de rolagem.*/
+  overflow: hidden;
+  /*A propriedade display com valor flex define o elemento como um flex container, isso significa que todos os elementos filhos serão flex itens.*/
+  display: flex;
+  /*A propriedade justify-content alinha os itens flex no container de acordo com a direção. O valor center alinha os itens no centro do container*/
+  justify-content: center;
+  /**/
+  align-items: center;
+}
+
+/*Foi definida uma class chamada "video-background" para definir os atributos do vídeo como plano de fundo. Dentro dessa class existe a tag "video". Chama-se o elemento pai "video-background" e em seguida o elemento filho "video". Assim, é possível ajustar as propriedades do video.*/
+.video-background video {
+  /*position é a propriedade que define a posição do elemento no documento. O valor fixed indica que o elemento terá um valor fixo em relação a área visível da tela.*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*A propriedade z-index define o nível de profundidade de algum elemento na tela. É ela que determina se um elemento esta mais próximo ou mais afastado da tela. Cada item adicionado vai recebendo um valor de z-index de acordo com o contexto de empilhamento do itens. Como queremos que o vídeo fique no fundo de tudo vamos adicionar logo o valor -1000.*/
+  z-index: -1000;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0.1rem;
+  color: rgb(255, 226, 226);
+  text-shadow: #61f61d 0.1em 0.01em 0.09em;
+  margin: 1%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter;
+  animation-duration: 3s;
+  animation-timing-function: steps(25);
+  animation-iteration-count: 2;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 106%;
+  }
+}
+
+.container {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.container-selecione {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+  padding: 5px;
+}
+
+::selection {
+  background: #61f61d;
+  color: #000;
+}
+
+#mensagem {
+  display: inline;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.682);
+  box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.5);
+  font-family: 'Rajdhani', sans-serif;
+  color: rgb(224, 221, 218);
+  outline: solid 0.2px rgb(45, 44, 43);
+  border: none;
+  padding: 0;
+}
+
+textarea {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 1.09rem;
+  color: #ffffff;
+  outline: solid 0.2px rgb(45, 44, 43);
+}
+
+select {
+  width: 100%;
+  height: 30px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.682);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  color: rgb(224, 221, 218);
+  margin: 0%;
+  padding: 0%;
+  outline: none;
+}
+
+select option {
+  background: rgba(0, 0, 0, 0.682);
+  font-family: 'Rajdhani', sans-serif;
+  color: rgb(224, 221, 218);
+  border: radius 2px;
+}
+
+.radio {
+  display: flex;
+  gap: 1px;
+  color: #61f61d;
+  text-shadow: 0.1rem, 0.1rem, 0.2rem, #61f61d;
+  place-items: center;
+  font-size: 0.9rem;
+}
+
+input[type='radio'] {
+  outline: none;
+  accent-color: #61f61d;
+  width: 15px;
+  height: 15px;
+}
+
+input[type='radio']:focus {
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow: 10px 10px 2s0px #d1d1d1, -10px -10px 40px #ffffff;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: center;
+  gap: 35%;
+  margin-bottom: 5%;
+  padding: 5%;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 30%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.436);
+  outline: solid 0.2px rgb(45, 44, 43);
+  padding: 8px;
+  border-radius: 1px;
+  color: #61f61d;
+  margin-bottom: 15%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  width: 8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:focus {
+  outline: solid 1px #61f61d;
+}
+
+button:hover {
+  background-color: #000;
+}
+
+.mensagem {
+  background: rgba(0, 0, 0, 0.682);
+  box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.5);
+  border: rgb(224, 221, 218);
+  border-radius: 2px;
+  margin-bottom: 2%;
+}
+
+.slider-range {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2%;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  width: 30px;
+  background-color: rgba(138, 138, 138, 0.2);
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 1px #818181;
+  color: #ffffff;
+  outline: none;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.chave {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.chave-container {
+  display: none;
+}
+
+.range {
+  -webkit-appearance: none;
+  height: 10px;
+  background-color: rgb(29, 29, 29);
+  outline: none;
+  cursor: ew-resize;
+  border-radius: 5px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 10px;
+  background-color: #61f61d;
+  border-radius: 2px;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 440px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  /*Foi definida uma class chamada "video-background" para definir os atributos do vídeo como plano de fundo.*/
+  .video-background {
+    /*width é a propriedade que define a largura do elemento. No caso temos um video que será usado como plano de fundo. Logo, width com valor de 100% quer dizer que a class video-background deve ocupar 100% da largura do elemento pai (no caso "body").*/
+    width: 100%;
+    /*A propriedade height define a altura do elemento. No caso, 100vh quer dizer que a altura do elemento será de 100% da viewport ( área exibida na tela)*/
+    height: 100vh;
+    /*A propriedade overflow controla o que acontece com o conteúdo grande demais para caber em um área. Ela especifica se o conteúdo deve ser cortado ou adicionado barra de rolagem. O valor hidden corta o conteúdo, deixando a parte cortada oculta e sem barra de rolagem.*/
+    overflow: hidden;
+    /*A propriedade display com valor flex define o elemento como um flex container, isso significa que todos os elementos filhos serão flex itens.*/
+    display: flex;
+    /*A propriedade justify-content alinha os itens flex no container de acordo com a direção. O valor center alinha os itens no centro do container*/
+    justify-content: center;
+    /**/
+    align-items: center;
+  }
+
+  /*Foi definida uma class chamada "video-background" para definir os atributos do vídeo como plano de fundo. Dentro dessa class existe a tag "video". Chama-se o elemento pai "video-background" e em seguida o elemento filho "video". Assim, é possível ajustar as propriedades do video.*/
+  .video-background video {
+    /*position é a propriedade que define a posição do elemento no documento. O valor fixed indica que o elemento terá um valor fixo em relação a área visível da tela.*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*A propriedade z-index define o nível de profundidade de algum elemento na tela. É ela que determina se um elemento esta mais próximo ou mais afastado da tela. Cada item adicionado vai recebendo um valor de z-index de acordo com o contexto de empilhamento do itens. Como queremos que o vídeo fique no fundo de tudo vamos adicionar logo o valor -1000.*/
+    z-index: -1000;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 0.1rem;
+    color: rgb(255, 226, 226);
+    text-shadow: #61f61d 0.1em 0.01em 0.09em;
+    margin: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter;
+    animation-duration: 3s;
+    animation-timing-function: steps(25);
+    animation-iteration-count: 2;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 106%;
+    }
+  }
+
+  .container {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  .container-selecione {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  ::selection {
+    background: #61f61d;
+    color: #000;
+  }
+
+  #mensagem {
+    display: inline;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.682);
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.5);
+    font-family: 'Rajdhani', sans-serif;
+    color: rgb(224, 221, 218);
+    outline: solid 0.2px rgb(45, 44, 43);
+    border: none;
+    padding: 0;
+  }
+
+  textarea {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #ffffff;
+    outline: solid 0.2px rgb(45, 44, 43);
+    resize: none;
+  }
+
+  select {
+    width: 100%;
+    height: 30px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.682);
+    font-family: 'Rajdhani', sans-serif;
+    color: rgb(224, 221, 218);
+    margin-bottom: 2%;
+    outline: none;
+  }
+
+  select option {
+    background: rgba(0, 0, 0, 0.682);
+    font-family: 'Rajdhani', sans-serif;
+    color: rgb(224, 221, 218);
+    border: radius 2px;
+  }
+
+  .radio {
+    display: flex;
+    gap: 1px;
+    color: #61f61d;
+    text-shadow: 0.1rem, 0.1rem, 0.2rem, #61f61d;
+    place-items: center;
+    font-size: 0.8rem;
+  }
+
+  input[type='radio'] {
+    outline: none;
+    accent-color: #61f61d;
+    width: 15px;
+    height: 15px;
+  }
+
+  input[type='radio']:focus {
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    box-shadow: 10px 10px 2s0px #d1d1d1, -10px -10px 40px #ffffff;
+  }
+
+  .radio-button {
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+    margin-bottom: 5%;
+    padding: 5%;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 10%;
+    margin-left: 2%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.436);
+    outline: solid 0.2px rgb(45, 44, 43);
+    padding: 8px;
+    border-radius: 1px;
+    color: #61f61d;
+    margin-bottom: 15%;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    width: 8rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:focus {
+    outline: solid 1px #61f61d;
+  }
+
+  button:hover {
+    background-color: #000;
+  }
+
+  .mensagem {
+    background: rgba(0, 0, 0, 0.682);
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.5);
+    border: rgb(224, 221, 218);
+    border-radius: 2px;
+    margin-bottom: 2%;
+  }
+
+  .slider-range {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2%;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    width: 30px;
+    background-color: rgba(138, 138, 138, 0.2);
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px #818181;
+    color: #ffffff;
+    outline: none;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .chave {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+
+  .chave-container {
+    display: none;
+  }
+
+  .range {
+    -webkit-appearance: none;
+    height: 10px;
+    background-color: rgb(29, 29, 29);
+    outline: none;
+    cursor: ew-resize;
+    border-radius: 5px;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 10px;
+    background-color: #61f61d;
+    border-radius: 2px;
+  }
+}
